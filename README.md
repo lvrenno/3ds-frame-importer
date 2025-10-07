@@ -1,11 +1,11 @@
 # 3ds Max Painting Importer
 
 A tool developed in **Python** with **PySide2** and **pymxs** to automate the import of artworks into **3ds Max**.  
-Originally created to streamline the modeling of an exhibition at **Paço Imperial (Rio de Janeiro)** within the **Raul Mourão Studio**, this tool simplifies the process of generating framed paintings with real-world dimensions, automatically applying materials and UV mapping from named image files.
+Originally created to streamline the modeling of an exhibition at **Paço Imperial (Rio de Janeiro)** within the **Raul Mourão Art Studio**, this tool simplifies the process of generating framed paintings with real-world dimensions, automatically applying materials and UV mapping from named image files.
 
 ---
 
-## English Version
+## English Version (Português abaixo)
 
 ### Overview
 
@@ -36,14 +36,14 @@ In gallery and exhibition modeling projects, it's common to deal with dozens (or
 
 Each image should follow this pattern:
 
-ArtworkTitle_Number_HeightxWidthCM.jpg
+**ArtworkTitle_Number_HeightxWidthCM.jpg**
 
 Example:
-Abstrato_03_120x90cm.png
+Abstract_03_120x90cm.png
 
 
 Interpreted as:
-- Title: "Abstrato #03"
+- Title: "Abstract #03"
 - Height: 120 cm
 - Width: 90 cm
 
@@ -61,16 +61,6 @@ Interpreted as:
 
 ---
 
-### Project Structure
-3dsmax-painting-importer/
-│
-├── importer.py # Main script
-├── README.md # Documentation
-└── /examples # Example images and outputs (optional)
-
-
----
-
 ### Technologies
 
 - 3ds Max 2023
@@ -83,28 +73,22 @@ Interpreted as:
 
 ### Motivation
 
-This project was developed during the modeling of **Raul Mourão’s exhibition** at **Paço Imperial (Rio de Janeiro)**.  
+This project was developed during the modeling of **Raul Mourão’s Janelas exhibition** at **Paço Imperial (Rio de Janeiro)**.  
 With a library of more than 100 digitized artworks, there was a clear need to automate the 3D import process to optimize the **spatial visualization** and **exhibition planning** workflow.
 
-Though created within an art and architecture context, this project reflects a broader interest in **technical art**, **design automation**, and **creative pipeline optimization**—skills that are equally relevant in the **video game industry**.
-
----
-
-### License
-
-This project is distributed under the **MIT License**.  
-You are free to modify and adapt it as needed.
+Though created within an art and architecture context, this project reflects a broader interest in **technical art**, **design automation**, and **creative pipeline optimization**.
 
 ---
 
 ### Author
 
 **Lucas Vieira Rennó**  
-Designer & Creative Technologist  
+Designer & Technical Artist  
 Raul Mourão Studio | Rio de Janeiro, Brazil  
 [linkedin.com/in/lucasrenno](https://linkedin.com/in/lucasrenno)
 
 ---
+
 
 ## Versão em Português
 
@@ -137,8 +121,7 @@ O **3ds Max Painting Importer** automatiza toda essa etapa:
 
 Cada imagem deve seguir o padrão:
 
-NomeDaObra_Numero_AlturaXLarguraCM.jpg
-
+**NomeDaObra_Numero_AlturaXLarguraCM.jpg**
 
 Exemplo:
 
@@ -164,18 +147,6 @@ Interpretado como:
 
 ---
 
-### Estrutura do Projeto
-
-
-3dsmax-painting-importer/
-│
-├── importer.py # Script principal
-├── README.md # Documentação
-└── /examples # Exemplos de imagens e resultados (opcional)
-
-
----
-
 ### Tecnologias Utilizadas
 
 - 3ds Max 2023  
@@ -188,26 +159,16 @@ Interpretado como:
 
 ### Motivação
 
-O projeto foi desenvolvido durante a modelagem da exposição de **Raul Mourão** no **Paço Imperial (RJ)**.  
+O projeto foi desenvolvido durante a modelagem da exposição "Janelas" de **Raul Mourão** para o **Paço Imperial (RJ)**.  
 A partir de uma biblioteca com mais de 100 obras digitalizadas, surgiu a necessidade de automatizar a criação de quadros no ambiente 3D para otimizar o processo de **visualização espacial** e **planejamento expositivo**.
 
-Embora tenha origem no campo das artes visuais, o projeto reflete um interesse mais amplo: a interseção entre **arte, design e tecnologia**, e o papel do **Technical Artist** na otimização de pipelines criativos — dentro e fora da indústria de jogos.
-
----
-
-### Licença
-
-Este projeto é distribuído sob a licença **MIT**.  
-Sinta-se à vontade para modificar e adaptar conforme necessário.
+Embora tenha origem no campo das artes visuais, o projeto reflete um interesse mais amplo: a interseção entre **arte, design e tecnologia**, e o papel do **Technical Artist** na otimização de pipelines criativas.
 
 ---
 
 ### Autor
 
 **Lucas Vieira Rennó**  
-Designer & Creative Technologist  
+Designer & Technical Artist  
 Ateliê Raul Mourão | Rio de Janeiro, Brasil  
 [linkedin.com/in/lucasrenno](https://linkedin.com/in/lucasrenno)
-
-
-
