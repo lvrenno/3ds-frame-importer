@@ -1,7 +1,7 @@
-# 3ds Max Painting Importer
+# 3ds Max Frame Importer Builder (Editable Poly Version)
 
-A tool developed in **Python** with **PySide2** and **pymxs** to automate the import of artworks into **3ds Max**.  
-Originally created to streamline the modeling of an exhibition at **Paço Imperial (Rio de Janeiro)** within the **Raul Mourão Art Studio**, this tool simplifies the process of generating framed paintings with real-world dimensions, automatically applying materials and UV mapping from named image files.
+A Python tool built with **PySide2** and **pymxs** to automate the creation of framed paintings in **3ds Max**.  
+Developed to streamline exhibition modeling at the **Raul Mourão Art Studio**, this script imports artwork images with real-world dimensions, applies textures and UV mapping, and procedurally builds adjustable 3D frames.
 
 ---
 
@@ -9,74 +9,71 @@ Originally created to streamline the modeling of an exhibition at **Paço Imperi
 
 ### Overview
 
-In gallery and exhibition modeling projects, it's common to deal with dozens (or hundreds) of artwork images. Manually setting up each frame in **3ds Max**—defining dimensions, materials, and textures—can be time-consuming and error-prone.
+When working with galleries or exhibitions, managing multiple artworks in **3ds Max** can become repetitive — manually scaling, texturing, and framing each painting.  
+**3ds Max Frame Importer Builder** automates this workflow through a simple interface that reads image dimensions from filenames and generates fully configured 3D paintings.
 
-**3ds Max Painting Importer** automates this entire process:
-- Reads **title**, **number**, **height**, and **width** directly from the image filename.
-- Creates paintings with **real-world dimensions (in centimeters)**.
-- Automatically applies **materials, planar UV mapping**, and the **image texture**.
-- Optionally generates **3D frames** with adjustable depth and thickness.
-- Includes a **PySide2 graphical interface** for parameter control.
+This updated 3ds Max Painting Importer automates the entire process using Editable Poly geometry, offering greater flexibility for further modeling, editing, or deformation.
 
 ---
 
 ### Features
 
-- Automatic import of multiple images (.png, .jpg, .tiff)
-- Dimension detection from filename  
+- Automatic import of multiple image formats: `.png`, `.jpg`, `.tif`
+- Reads artwork dimensions directly from the filename  
   Format: `Title_Number_HeightxWidthCM.jpg`
-- Real-world scaling and customizable frame depth
-- Automatic material creation and UV mapping
-- Simple graphical interface built with **PySide2**
-- Compatible with **3ds Max 2023**
+- Creates geometry in **real-world scale (centimeters)**
+- Uses Editable Poly objects instead of meshes.
+- Applies materials and **planar UV mapping**, and the image texture.
+- Optionally generates 3D frames with adjustable thickness and depth.
+- Intuitive **PySide2 GUI** for parameter control
+- Compatible with **3ds Max 2023 and 2024**
 
 ---
 
 ### Filename Convention
 
-Each image should follow this pattern:
+Each image file should follow this pattern:
 
 **ArtworkTitle_Number_HeightxWidthCM.jpg**
 
-Example:
-Abstract_03_120x90cm.png
-
+Example:  
+`Abstract_03_120x90cm.png`
 
 Interpreted as:
-- Title: "Abstract #03"
-- Height: 120 cm
-- Width: 90 cm
+- Title: “Abstract #03”  
+- Height: 120 cm  
+- Width: 90 cm  
 
 ---
 
 ### How to Use
 
-1. Open **3ds Max 2023**.  
-2. Ensure Python and PySide2 are enabled.  
+1. Open **3ds Max 2023 or 2024**.  
+2. Ensure Python and PySide2 are active.  
 3. Run the script via **Scripting > Run Script**.  
-4. The **Painting Importer** window will appear.  
-5. Select the folder containing the images.  
-6. Adjust parameters such as depth and frame thickness.  
-7. Click **Import** to generate all paintings automatically.
+4. The **Frame Importer Builder** window will appear.  
+5. Select a folder with artwork images.  
+6. Adjust depth, frame thickness, or disable frame generation.  
+7. Click **Import** to automatically create and texture all paintings.
 
 ---
 
 ### Technologies
 
-- 3ds Max 2023
-- Python 3.7+
-- PySide2 (UI)
-- pymxs (3ds Max API)
-- re, os (Standard libraries)
+- 3ds Max 2023–2024  
+- Python 3.7+  
+- PySide2 (GUI)  
+- pymxs (3ds Max runtime API)  
+- re, os (standard libraries)
 
 ---
 
 ### Motivation
 
-This project was developed during the modeling of **Raul Mourão’s Janelas exhibition** at **Paço Imperial (Rio de Janeiro)**.  
-With a library of more than 100 digitized artworks, there was a clear need to automate the 3D import process to optimize the **spatial visualization** and **exhibition planning** workflow.
+Originally designed for the modeling of **Raul Mourão’s exhibition “Janelas”** at **Paço Imperial (Rio de Janeiro)**, this tool reduced the repetitive manual setup of over 100 artworks.  
+The project embodies a broader exploration of **technical art**, **creative coding**, and **automation in design workflows**.
 
-Though created within an art and architecture context, this project reflects a broader interest in **technical art**, **design automation**, and **creative pipeline optimization**.
+This Editable Poly version represents a technical refinement of that goal — aligning with best practices in 3ds Max modeling and expanding the script’s use beyond art spaces into architectural visualization, technical art, and design automation.
 
 ---
 
@@ -89,31 +86,28 @@ Raul Mourão Studio | Rio de Janeiro, Brazil
 
 ---
 
-
 ## Versão em Português
 
 ### Visão Geral
 
-Em projetos de modelagem de galerias e exposições, é comum lidar com dezenas (ou centenas) de imagens de obras. Ajustar manualmente cada uma no **3ds Max** — definindo dimensões, materiais e texturas — é um processo demorado e sujeito a erros.
+Ao trabalhar com modelagem de galerias e exposições, ajustar manualmente cada quadro no **3ds Max** — definindo escala, textura e moldura — é um processo repetitivo e demorado.  
+O **3ds Max Frame Importer Builder** automatiza essa tarefa a partir de uma interface simples, lendo dimensões diretamente do nome do arquivo e criando quadros 3D completos.
 
-O **3ds Max Painting Importer** automatiza toda essa etapa:
-- Lê automaticamente **título**, **número**, **altura** e **largura** a partir do nome do arquivo.  
-- Cria quadros com **dimensões reais (em centímetros)**.  
-- Aplica **materiais, mapeamento UV planar** e a **textura da imagem** na face frontal.  
-- (Opcional) Gera **molduras tridimensionais** com espessura configurável.  
-- Oferece uma **interface gráfica (GUI)** desenvolvida em **PySide2**.
+Esta versão atualizada do 3ds Max Painting Importer automatiza toda essa etapa, agora utilizando Editable Poly em vez de Editable Mesh, garantindo maior controle geométrico e compatibilidade com modificadores e workflows de modelagem.
 
 ---
 
 ### Funcionalidades
 
-- Importação automática de múltiplas imagens (.png, .jpg, .tiff)
-- Detecção de dimensões a partir do nome do arquivo  
-  Formato: `Titulo_Numero_AlturaXLarguraCM.jpg`
-- Escala em centímetros e profundidade configurável
-- Criação automática de materiais e mapeamento UV
-- Interface gráfica intuitiva com **PySide2**
-- Compatível com **3ds Max 2023**
+- Importação automática de múltiplos formatos de imagem: `.png`, `.jpg`, `.tif`
+- Lê as dimensões da obra diretamente a partir do nome do arquivo
+- Formato: `Titulo_Numero_AlturaxLarguraCM.jpg`
+- Cria geometria em **escala real (centímetros)**
+- Utiliza objetos **Editable Poly** em vez de malhas (meshes)
+- Aplica materiais, **mapeamento UV planar** e a textura da imagem
+- Gera opcionalmente **molduras 3D** com espessura e profundidade ajustáveis
+- Interface intuitiva em **PySide2** para controle dos parâmetros
+- Compatível com **3ds Max 2023 e 2024**
 
 ---
 
@@ -121,48 +115,48 @@ O **3ds Max Painting Importer** automatiza toda essa etapa:
 
 Cada imagem deve seguir o padrão:
 
-**NomeDaObra_Numero_AlturaXLarguraCM.jpg**
+**NomeDaObra_Numero_AlturaxLarguraCM.jpg**
 
-Exemplo:
-
-Abstrato_03_120x90cm.png
-
+Exemplo:  
+`Abstrato_03_120x90cm.png`
 
 Interpretado como:
-- Título: “Abstrato #03”
-- Altura: 120 cm
-- Largura: 90 cm
+- Título: “Abstrato #03”  
+- Altura: 120 cm  
+- Largura: 90 cm  
 
 ---
 
 ### Como Usar
 
-1. Abra o **3ds Max 2023**.  
+1. Abra o **3ds Max 2023 ou 2024**.  
 2. Verifique se o Python e o PySide2 estão habilitados.  
 3. Execute o script pelo menu **Scripting > Run Script**.  
-4. A janela **Importador de Quadros** será exibida.  
-5. Selecione a pasta com as imagens desejadas.  
-6. Ajuste parâmetros como profundidade e espessura da moldura.  
+4. A janela **Frame Importer Builder** será exibida.  
+5. Selecione a pasta com as imagens.  
+6. Ajuste profundidade, espessura da moldura ou desative-a.  
 7. Clique em **Importar** para gerar automaticamente todos os quadros.
 
 ---
 
 ### Tecnologias Utilizadas
 
-- 3ds Max 2023  
+- 3ds Max 2023–2024  
 - Python 3.7+  
-- PySide2 (interface)  
-- pymxs (integração com o runtime do Max)  
+- PySide2 (interface gráfica)  
+- pymxs (API de integração com o Max)  
 - re, os (bibliotecas padrão)
 
 ---
 
 ### Motivação
 
-O projeto foi desenvolvido durante a modelagem da exposição "Janelas" de **Raul Mourão** para o **Paço Imperial (RJ)**.  
-A partir de uma biblioteca com mais de 100 obras digitalizadas, surgiu a necessidade de automatizar a criação de quadros no ambiente 3D para otimizar o processo de **visualização espacial** e **planejamento expositivo**.
+Desenvolvido durante a modelagem da exposição **“Janelas” de Raul Mourão** no **Paço Imperial (RJ)**, o script surgiu para eliminar a repetição de tarefas na criação de mais de 100 quadros.  
+O projeto reflete um interesse em **automação criativa**, **arte generativa** e na atuação do **Technical Artist** como elo entre **arte e tecnologia**.
 
-Embora tenha origem no campo das artes visuais, o projeto reflete um interesse mais amplo: a interseção entre **arte, design e tecnologia**, e o papel do **Technical Artist** na otimização de pipelines criativas.
+Esta versão em **Editable Poly** representa um aprimoramento técnico desse objetivo — alinhando-se às boas práticas de modelagem no **3ds Max** e ampliando o uso do script para além dos espaços artísticos, abrangendo também **visualização arquitetônica**, **arte técnica (Technical Art)** e **automação de design**.
+
+A versão usando Editable Poly representa uma evolução técnica do projeto, permitindo maior compatibilidade com ferramentas de modelagem e fluxos criativos que exigem precisão e flexibilidade — alinhando arte, design e tecnologia sob a ótica do Technical Artist.
 
 ---
 
