@@ -1,4 +1,4 @@
-# 3ds Max Painting Importer
+# 3ds Max Frame Painting Importer
 
 A tool developed in **Python** with **PySide2** and **pymxs** to automate the import of artworks into **3ds Max**.  
 Originally created to streamline the modeling of an exhibition at **Paço Imperial (Rio de Janeiro)** within the **Raul Mourão Art Studio**, this tool simplifies the process of generating framed paintings with real-world dimensions, automatically applying materials and UV mapping from named image files.
@@ -11,7 +11,7 @@ Originally created to streamline the modeling of an exhibition at **Paço Imperi
 
 In gallery and exhibition modeling projects, it's common to deal with dozens (or hundreds) of artwork images. Manually setting up each frame in **3ds Max**—defining dimensions, materials, and textures—can be time-consuming and error-prone.
 
-**3ds Max Painting Importer** automates this entire process:
+**3ds Max Frame Importer** automates this entire process:
 - Reads **title**, **number**, **height**, and **width** directly from the image filename.
 - Creates paintings with **real-world dimensions (in centimeters)**.
 - Automatically applies **materials, planar UV mapping**, and the **image texture**.
@@ -96,7 +96,7 @@ Raul Mourão Studio | Rio de Janeiro, Brazil
 
 Em projetos de modelagem de galerias e exposições, é comum lidar com dezenas (ou centenas) de imagens de obras. Ajustar manualmente cada uma no **3ds Max** — definindo dimensões, materiais e texturas — é um processo demorado e sujeito a erros.
 
-O **3ds Max Painting Importer** automatiza toda essa etapa:
+O **3ds Max Frame Importer** automatiza toda essa etapa:
 - Lê automaticamente **título**, **número**, **altura** e **largura** a partir do nome do arquivo.  
 - Cria quadros com **dimensões reais (em centímetros)**.  
 - Aplica **materiais, mapeamento UV planar** e a **textura da imagem** na face frontal.  
