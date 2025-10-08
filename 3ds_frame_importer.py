@@ -28,8 +28,12 @@ def create_frame(height, width, thickness, depth, title):
     frame_material.diffuse = rt.color(0, 0, 0)
     frame.material = frame_material
 
+    # Converte para Editable Poly
+    rt.convertToPoly(frame)
+
     return frame
 
+# Cria o quadro
 def create_painting(image_path, title, height_cm, width_cm, depth_cm, add_frame, frame_thickness_cm):
     height = height_cm
     width = width_cm
@@ -39,24 +43,25 @@ def create_painting(image_path, title, height_cm, width_cm, depth_cm, add_frame,
     box = rt.Box(length=height, width=width, height=depth, name=title)
     box.pos = rt.Point3(0, 0, depth / 2)
 
-    # Converte para Editable Mesh
-    rt.convertToMesh(box)
+    # Converte para Editable Poly (em vez de Mesh)
+    rt.convertToPoly(box)
 
-    # Aplica ID 1 à face superior (normal apontando para +Z)
-    for i in range(1, rt.getNumFaces(box) + 1):
-        normal = rt.getFaceNormal(box, i)
+    # Define material IDs: face de cima = 1, outras = 2
+    num_faces = rt.polyOp.getNumFaces(box)
+    for i in range(1, num_faces + 1):
+        normal = rt.polyOp.getFaceNormal(box, i)
         if normal.z > 0.99:
-            rt.setFaceMatID(box, i, 1)
+            rt.polyOp.setFaceMatID(box, i, 1)
         else:
-            rt.setFaceMatID(box, i, 2)
+            rt.polyOp.setFaceMatID(box, i, 2)
 
-    # Aplica mapeamento UVW para a projeção da textura
+    # Aplica mapeamento UVW (compatível com Editable Poly)
     uvw = rt.UVWMap()
     uvw.mappingType = rt.Name("planar")
     uvw.length = height
     uvw.width = width
     uvw.height = depth
-    uvw.align = rt.Name("z")  # Alinha a projeção no eixo Z (face superior)
+    uvw.align = rt.Name("z")
     rt.addModifier(box, uvw)
 
     # Cria textura da imagem
@@ -90,9 +95,6 @@ def create_painting(image_path, title, height_cm, width_cm, depth_cm, add_frame,
         return box
 
 # Widget de configuração de cada obra
-
-from PySide2 import QtWidgets, QtCore
-
 class PaintingWidget(QtWidgets.QWidget):
     def __init__(self, filename, image_path, title, height, width):
         super().__init__()
@@ -148,44 +150,6 @@ class PaintingWidget(QtWidgets.QWidget):
         self.frame_checkbox.setEnabled(enabled)
         self.thickness_input.setEnabled(enabled and self.frame_checkbox.isChecked())
         self.depth_input.setEnabled(enabled)
-
-    def get_config(self):
-        try:
-            thickness = float(self.thickness_input.text())
-        except:
-            thickness = 2.0
-        try:
-            depth = float(self.depth_input.text())
-        except:
-            depth = 5.0
-        return {
-            "enabled": self.enable_checkbox.isChecked(),
-            "image_path": self.image_path,
-            "title": self.title,
-            "height": self.height,
-            "width": self.width,
-            "add_frame": self.frame_checkbox.isChecked(),
-            "thickness": thickness,
-            "depth": depth
-        }
-
-    def toggle_thickness_input(self, state):
-        self.thickness_input.setEnabled(state == QtCore.Qt.Checked)
-
-    def get_config(self):
-        return {
-            "enabled": self.enable_checkbox.isChecked(),
-            "image_path": self.image_path,
-            "title": self.title,
-            "height": self.height,
-            "width": self.width,
-            "depth": float(self.depth_input.text()),
-            "add_frame": self.frame_checkbox.isChecked(),
-            "thickness": float(self.thickness_input.text()) if self.frame_checkbox.isChecked() else 0.0
-        }
-
-    def toggle_thickness_input(self, state):
-        self.thickness_input.setEnabled(state == QtCore.Qt.Checked)
 
     def get_config(self):
         try:
@@ -280,9 +244,9 @@ class PaintingImporter(QtWidgets.QWidget):
                 imported += 1
 
         if imported == 0:
-            rt.messageBox("No painting was selected for import.")
+            rt.messageBox("Nenhum quadro selecionado para importação.")
         else:
-            rt.messageBox(f"Import completed successfully! {imported} painting(s) imported.")
+            rt.messageBox(f"Importação concluída com sucesso! {imported} quadro(s) importado(s).")
 
 # Executa a interface
 app = QtWidgets.QApplication.instance()
