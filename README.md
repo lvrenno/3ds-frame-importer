@@ -1,4 +1,4 @@
-# 3ds Max Frame Importer Builder (Editable Poly Version)
+# 3ds Max Frame Importer (Editable Poly Version)
 
 A Python tool built with **PySide2** and **pymxs** to automate the creation of framed paintings in **3ds Max**.  
 Developed to streamline exhibition modeling at the **Raul Mourão Art Studio**, this script imports artwork images with real-world dimensions, applies textures and UV mapping, and procedurally builds adjustable 3D frames.
@@ -165,4 +165,5 @@ A versão usando Editable Poly representa uma evolução técnica do projeto, pe
 **Lucas Vieira Rennó**  
 Designer & Technical Artist  
 Ateliê Raul Mourão | Rio de Janeiro, Brasil  
+
 [linkedin.com/in/lucasrenno](https://linkedin.com/in/lucasrenno)
